@@ -15,8 +15,7 @@ import { Invitado, InvitadoService } from '../services/invitado.service';
   styleUrls: ['./invitacion-page.css']
 })
 export class InvitacionPage implements OnInit, OnDestroy {
-  private route = inject(ActivatedRoute);
-  private cdr = inject(ChangeDetectorRef);
+
  public id:any
   // ─── Guest name desde la ruta /:invitado ───────────────────────────────────
   guestName = signal<string>('Querido Invitado');
@@ -58,9 +57,11 @@ export class InvitacionPage implements OnInit, OnDestroy {
     return `https://wa.me/${this.whatsappNumber}?text=${msg}`;
   }
 
-  constructor(private service:InvitadoService){
-
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
+    private service: InvitadoService
+  ) {}
 
   // ─── Lifecycle ─────────────────────────────────────────────────────────────
   ngOnInit(): void {
