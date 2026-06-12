@@ -1,0 +1,32 @@
+<header class="relative w-full h-[100svh] flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+  
+  <!-- Background Image -->
+  <div 
+    class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40"
+    style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000')">
+  </div>
+  <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-[#FDFBF7] opacity-90"></div>
+
+  <!-- Corazones Flotantes -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="heart-float text-[#8F9779]/30 text-3xl left-[10%]" style="animation-delay: 0s;">❤️</div>
+    <div class="heart-float text-[#8F9779]/30 text-5xl left-[30%]" style="animation-delay: 2s;">❤️</div>
+    <div class="heart-float text-[#8F9779]/30 text-2xl left-[60%]" style="animation-delay: 4s;">❤️</div>
+    <div class="heart-float text-[#8F9779]/30 text-4xl left-[80%]" style="animation-delay: 1s;">❤️</div>
+    <div class="heart-float text-[#8F9779]/30 text-3xl left-[50%]" style="animation-delay: 3s;">❤️</div>
+  </div>
+  
+  <!-- Hero Content -->
+  <div class="relative z-10 flex flex-col items-center w-full px-4" [class.fade-in-up]="isLoaded()">
+    <p class="font-sans tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm md:text-base text-gray-500 mb-4 sm:mb-6 uppercase">
+      Nuestra Boda
+    </p>
+    <h1 class="font-script text-6xl sm:text-8xl md:text-9xl text-[#3A3A3A] mb-2 sm:mb-4 px-2">
+      Jorge & Eva
+    </h1>
+    <div class="w-12 sm:w-16 h-[1px] bg-gray-400 my-4 sm:my-6"></div>
+    <p class="font-serif text-xl sm:text-2xl md:text-3xl text-gray-700 tracking-[0.15em] sm:tracking-widest">
+      19 . 09 . 2026
+    </p>
+  </div>
+</header>

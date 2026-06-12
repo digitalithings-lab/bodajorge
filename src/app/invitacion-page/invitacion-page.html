@@ -1,0 +1,232 @@
+<div class="min-h-screen bg-[#FDFBF7] text-[#4A4A4A] overflow-x-hidden selection:bg-[#E2E6D9]">
+
+  <!-- ═══════════════════════════════════ HERO ═══════════════════════════════ -->
+  <header class="relative w-full h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40"
+         style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000')"></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-[#FDFBF7] opacity-90"></div>
+
+    <!-- Corazones flotantes -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div class="heart-float text-3xl left-[10%]"  style="animation-delay:0s">❤️</div>
+      <div class="heart-float text-5xl left-[30%]"  style="animation-delay:2s">❤️</div>
+      <div class="heart-float text-2xl left-[60%]"  style="animation-delay:4s">❤️</div>
+      <div class="heart-float text-4xl left-[80%]"  style="animation-delay:1s">❤️</div>
+      <div class="heart-float text-3xl left-[50%]"  style="animation-delay:3s">❤️</div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center w-full px-4" [class.fade-in-up]="isLoaded()">
+      <p class="font-sans tracking-[0.3em] text-sm text-gray-500 mb-6 uppercase">Nuestra Boda</p>
+      <h1 class="font-script text-8xl md:text-9xl text-[#3A3A3A] mb-4">Jorge &amp; Eva</h1>
+      <div class="w-16 h-[1px] bg-gray-400 my-6"></div>
+      <p class="font-serif text-2xl md:text-3xl text-gray-700 tracking-widest">19 . 09 . 2026</p>
+    </div>
+  </header>
+
+  <!-- ═════════════════════════════ INVITACIÓN ══════════════════════════════ -->
+  <section class="py-24 px-4 max-w-3xl mx-auto text-center">
+    <svg class="w-8 h-8 mx-auto text-[#8F9779] mb-8 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+    </svg>
+    <h2 class="font-serif text-4xl md:text-5xl text-[#333] mb-6">¡Hola, {{ nombre }}!</h2>
+    <p class="font-sans font-light text-lg text-gray-600 leading-relaxed">
+      {{mensaje}}
+    </p>
+
+    <!-- Countdown -->
+    <div class="mt-12 grid grid-cols-4 gap-4 max-w-lg mx-auto">
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-[#8F9779]/20">
+        <span class="font-serif text-4xl text-[#3A3A3A]">{{ countdownDays() }}</span>
+        <span class="font-sans text-xs uppercase tracking-widest text-gray-500 mt-1">Días</span>
+      </div>
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-[#8F9779]/20">
+        <span class="font-serif text-4xl text-[#3A3A3A]">{{ countdownHours() }}</span>
+        <span class="font-sans text-xs uppercase tracking-widest text-gray-500 mt-1">Hrs</span>
+      </div>
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-[#8F9779]/20">
+        <span class="font-serif text-4xl text-[#3A3A3A]">{{ countdownMinutes() }}</span>
+        <span class="font-sans text-xs uppercase tracking-widest text-gray-500 mt-1">Min</span>
+      </div>
+      <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-[#8F9779]/20">
+        <span class="font-serif text-4xl text-[#3A3A3A]">{{ countdownSeconds() }}</span>
+        <span class="font-sans text-xs uppercase tracking-widest text-gray-500 mt-1">Seg</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ DETALLES ═══════════════════════════════ -->
+  <section class="py-20 bg-[#F5F2EA]">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="font-serif text-4xl text-center mb-16 text-[#333]">¿Dónde y Cuándo?</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <!-- Ceremonia -->
+        <div class="bg-white p-10 rounded-2xl shadow-md flex flex-col items-center text-center border border-gray-100/50">
+          <div class="w-16 h-16 rounded-full bg-[#E8EAE3] flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-[#8F9779]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-2xl mb-2 text-[#333]">Ceremonia Religiosa</h3>
+          <p class="font-sans font-light text-gray-500 mb-6 uppercase text-xs tracking-widest">Sábado, 19 de septiembre</p>
+          <div class="flex items-center gap-2 mb-2 text-gray-700 font-sans font-medium text-sm">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>1:30 PM</span>
+          </div>
+          <div class="flex items-start gap-2 mb-8 text-gray-700 font-sans font-medium text-sm">
+            <svg class="w-4 h-4 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-left">Parroquia Santa Eduviges</span>
+          </div>
+          <a href="https://maps.app.goo.gl/QiT77ybYb2msLUFPA" target="_blank" rel="noreferrer"
+             class="mt-auto border border-[#8F9779] text-[#8F9779] hover:bg-[#8F9779] hover:text-white transition-colors duration-300 font-sans text-xs tracking-widest uppercase py-3 px-8 rounded-full">
+            Ver en Mapa
+          </a>
+        </div>
+
+        <!-- Celebración -->
+        <div class="bg-white p-10 rounded-2xl shadow-md flex flex-col items-center text-center border border-gray-100/50">
+          <div class="w-16 h-16 rounded-full bg-[#E8EAE3] flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-[#8F9779]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15.2 22H8.8a2 2 0 0 1-2-1.79L5 3h14l-1.81 17.21A2 2 0 0 1 15.2 22Z"/><path d="M6 12h12"/>
+            </svg>
+          </div>
+          <h3 class="font-serif font-bold text-2xl mb-2 text-[#333]">Celebración</h3>
+          <p class="font-sans font-light text-gray-500 mb-6 uppercase text-xs tracking-widest">Después de la ceremonia</p>
+          <div class="flex items-center gap-2 mb-2 text-gray-700 font-sans font-medium text-sm">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>3:00 PM</span>
+          </div>
+          <div class="flex items-start gap-2 mb-8 text-gray-700 font-sans font-medium text-sm">
+            <svg class="w-4 h-4 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-left">Misawa Bakery, El Dorado</span>
+          </div>
+          <a href="https://maps.app.goo.gl/om79G8reQjkqS8gs6" target="_blank" rel="noreferrer"
+             class="mt-auto border border-[#8F9779] text-[#8F9779] hover:bg-[#8F9779] hover:text-white transition-colors duration-300 font-sans text-xs tracking-widest uppercase py-3 px-8 rounded-full">
+            Ver en Mapa
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ ITINERARIO ═══════════════════════════════ -->
+  <section class="py-24 px-4 max-w-4xl mx-auto">
+    <h2 class="font-serif text-4xl text-center mb-16 text-[#333]">Itinerario</h2>
+    <div class="relative border-l border-[#8F9779] ml-4 md:ml-[50%] space-y-12">
+      <div class="relative pl-6 md:pl-0 md:w-1/2 md:-ml-[1px] md:pr-12 md:text-right">
+        <div class="absolute left-[-5px] top-1 md:right-[-5px] md:left-auto w-3 h-3 rounded-full bg-[#8F9779]"></div>
+        <h4 class="font-serif text-2xl text-[#333]">13:30 - Ceremonia</h4>
+        <p class="font-sans font-light text-gray-500 text-sm mt-1">El gran "Sí, acepto".</p>
+      </div>
+      <div class="relative pl-6 md:pl-12 md:w-1/2 md:ml-auto md:text-left">
+        <div class="absolute left-[-5px] top-1 w-3 h-3 rounded-full bg-[#8F9779]"></div>
+        <h4 class="font-serif text-2xl text-[#333]">15:00 - Recepción</h4>
+        <p class="font-sans font-light text-gray-500 text-sm mt-1">Fotos y brindis de bienvenida.</p>
+      </div>
+      <div class="relative pl-6 md:pl-0 md:w-1/2 md:-ml-[1px] md:pr-12 md:text-right">
+        <div class="absolute left-[-5px] top-1 md:right-[-5px] md:left-auto w-3 h-3 rounded-full bg-[#8F9779]"></div>
+        <h4 class="font-serif text-2xl text-[#333]">16:30 - Cena</h4>
+        <p class="font-sans font-light text-gray-500 text-sm mt-1">Acompáñanos a cenar y compartir.</p>
+      </div>
+      <div class="relative pl-6 md:pl-12 md:w-1/2 md:ml-auto md:text-left">
+        <div class="absolute left-[-5px] top-1 w-3 h-3 rounded-full bg-[#8F9779]"></div>
+        <h4 class="font-serif text-2xl text-[#333]">18:00 - Fiesta</h4>
+        <p class="font-sans font-light text-gray-500 text-sm mt-1">¡A celebrar a lo grande!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ DRESS CODE ═══════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-[#F5F2EA]">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="font-serif text-4xl md:text-5xl mb-4 text-[#333]">Dress Code</h2>
+      <p class="font-sans font-semibold text-[#333] tracking-widest uppercase mb-4 text-sm">Formal / Etiqueta</p>
+      <p class="font-sans font-light text-gray-600 text-sm mb-12 max-w-2xl mx-auto">
+        Nos encantaría verlos lucir espectaculares en nuestro gran día.<br>
+        <span class="font-medium text-[#8F9779] block mt-2">* Por favor, reservar los tonos blancos y crema exclusivamente para la novia.</span>
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+        <!-- Damas -->
+        <div class="flex flex-col items-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <h4 class="font-serif text-3xl mb-2 text-[#333]">Damas</h4>
+          <p class="font-sans font-light text-gray-500 text-sm mb-6">Vestido largo de noche</p>
+          <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl mb-6 shadow-inner bg-gray-100">
+            <img *ngFor="let img of damasImages; let i = index"
+                 [src]="img" alt="Referencia vestido damas"
+                 class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out"
+                 [class.opacity-100]="i === currentDamaImg()"
+                 [class.opacity-0]="i !== currentDamaImg()"/>
+          </div>
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Colores sugeridos</p>
+          <div class="flex gap-4 flex-wrap justify-center">
+            <div class="w-10 h-10 rounded-full bg-[#2A3B32] shadow-md border border-gray-100" title="Verde Bosque"></div>
+            <div class="w-10 h-10 rounded-full bg-[#1A2B4C] shadow-md border border-gray-100" title="Azul Marino"></div>
+            <div class="w-10 h-10 rounded-full bg-[#5C2C35] shadow-md border border-gray-100" title="Vino / Borgoña"></div>
+            <div class="w-10 h-10 rounded-full bg-[#DCAE96] shadow-md border border-gray-100" title="Palo de Rosa"></div>
+            <div class="w-10 h-10 rounded-full bg-[#111111] shadow-md border border-gray-100" title="Negro"></div>
+          </div>
+        </div>
+
+        <!-- Caballeros -->
+        <div class="flex flex-col items-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <h4 class="font-serif text-3xl mb-2 text-[#333]">Caballeros</h4>
+          <p class="font-sans font-light text-gray-500 text-sm mb-6">Traje oscuro y corbata</p>
+          <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl mb-6 shadow-inner bg-gray-100">
+            <img *ngFor="let img of caballerosImages; let i = index"
+                 [src]="img" alt="Referencia traje caballeros"
+                 class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
+                 [class.opacity-100]="i === currentCaballeroImg()"
+                 [class.opacity-0]="i !== currentCaballeroImg()"/>
+          </div>
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Colores sugeridos</p>
+          <div class="flex gap-4 flex-wrap justify-center">
+            <div class="w-10 h-10 rounded-full bg-[#111111] shadow-md border border-gray-100" title="Negro"></div>
+            <div class="w-10 h-10 rounded-full bg-[#1A2B4C] shadow-md border border-gray-100" title="Azul Marino"></div>
+            <div class="w-10 h-10 rounded-full bg-[#36454F] shadow-md border border-gray-100" title="Gris Oxford"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ MESA DE REGALOS ═══════════════════════════ -->
+  <section class="py-24 bg-white text-center">
+    <div class="max-w-3xl mx-auto px-4 flex flex-col items-center">
+      <svg class="w-10 h-10 text-[#8F9779] mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 12 20 22 4 22 4 12"/><rect width="20" height="5" x="2" y="7"/>
+        <line x1="12" x2="12" y1="22" y2="7"/>
+        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+      </svg>
+      <h2 class="font-serif text-4xl md:text-5xl mb-6 text-[#333]">Mesa de Regalos</h2>
+      <p class="font-sans font-light text-gray-600 text-sm mb-10 leading-relaxed max-w-xl mx-auto">
+        El mejor regalo que pueden darnos es su presencia en este día tan especial. Pero si desean tener un detalle con nosotros, ponemos a su disposición nuestra cuenta:
+      </p>
+      <div class="bg-[#F5F2EA] p-8 rounded-xl w-full max-w-sm shadow-sm border border-gray-100/50">
+        <p class="font-sans font-medium text-gray-800 mb-2">Banco General</p>
+        <p class="font-sans text-gray-600 mb-2">Cuenta de Ahorros: 04-12-3456-7</p>
+        <p class="font-sans text-gray-600">A nombre de: Jorge y Eva</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONFIRMACIÓN ══════════════════════════════ -->
+  <section class="py-24 px-4 text-center bg-white border-t border-gray-100">
+    <h2 class="font-serif text-4xl md:text-5xl text-[#333] mb-6">Confirma tu Asistencia</h2>
+    <p class="font-sans font-light text-gray-600 mb-10 max-w-lg mx-auto text-sm">
+      Nos encantaría saber si podremos contar con tu presencia. Por favor, confírmanos antes del <strong>1 de Septiembre</strong>.
+    </p>
+    <a [href]="rsvpLink" target="_blank" rel="noreferrer"
+       class="inline-flex items-center justify-center gap-3 bg-[#8F9779] text-white py-4 px-10 rounded-full font-sans tracking-widest uppercase text-sm hover:bg-[#7a8266] transition-all transform hover:scale-105 shadow-md">
+      Sí, ahí estaré
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ════════════════════════════════ -->
+  <footer class="py-12 text-center bg-[#FDFBF7]">
+    <h1 class="font-script text-5xl text-[#3A3A3A] opacity-80">J &amp; E</h1>
+    <p class="font-sans font-light text-xs text-gray-400 mt-4 tracking-[0.2em] uppercase">Nos vemos pronto</p>
+  </footer>
+
+</div>
