@@ -17,7 +17,11 @@
 
     <div class="relative z-10 flex flex-col items-center w-full px-4" [class.fade-in-up]="isLoaded()">
       <p class="font-sans tracking-[0.3em] text-sm text-gray-500 mb-6 uppercase">Nuestra Boda</p>
-      <h1 class="font-script text-8xl md:text-9xl text-[#3A3A3A] mb-4">Jorge &amp; Eva</h1>
+      <h1 class="font-script text-8xl md:text-9xl text-[#3A3A3A] mb-4 flex flex-col items-center md:block leading-tight md:leading-normal">
+        <span>Jorge </span>
+        <span class="md:mx-2">&amp;</span>
+        <span>Eva</span>
+      </h1>
       <div class="w-16 h-[1px] bg-gray-400 my-6"></div>
       <p class="font-serif text-2xl md:text-3xl text-gray-700 tracking-widest">19 . 09 . 2026</p>
     </div>
@@ -159,13 +163,13 @@
                  [class.opacity-100]="i === currentDamaImg()"
                  [class.opacity-0]="i !== currentDamaImg()"/>
           </div>
-          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Colores sugeridos</p>
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#8F9779] mb-4 font-medium">Colores sugeridos</p>
           <div class="flex gap-4 flex-wrap justify-center">
-            <div class="w-10 h-10 rounded-full bg-[#2A3B32] shadow-md border border-gray-100" title="Verde Bosque"></div>
-            <div class="w-10 h-10 rounded-full bg-[#1A2B4C] shadow-md border border-gray-100" title="Azul Marino"></div>
-            <div class="w-10 h-10 rounded-full bg-[#5C2C35] shadow-md border border-gray-100" title="Vino / Borgoña"></div>
-            <div class="w-10 h-10 rounded-full bg-[#DCAE96] shadow-md border border-gray-100" title="Palo de Rosa"></div>
-            <div class="w-10 h-10 rounded-full bg-[#111111] shadow-md border border-gray-100" title="Negro"></div>
+            <div class="w-10 h-10 rounded-full bg-[#FFD1DC] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Rosa Pastel"></div>
+            <div class="w-10 h-10 rounded-full bg-[#AEC6CF] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Celeste Pastel"></div>
+            <div class="w-10 h-10 rounded-full bg-[#98FF98] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Verde Menta"></div>
+            <div class="w-10 h-10 rounded-full bg-[#E6E6FA] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Lavanda"></div>
+            <div class="w-10 h-10 rounded-full bg-[#FDFD96] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Amarillo Pastel"></div>
           </div>
         </div>
 
@@ -180,11 +184,12 @@
                  [class.opacity-100]="i === currentCaballeroImg()"
                  [class.opacity-0]="i !== currentCaballeroImg()"/>
           </div>
-          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Colores sugeridos</p>
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#8F9779] mb-4 font-medium">Colores sugeridos</p>
           <div class="flex gap-4 flex-wrap justify-center">
-            <div class="w-10 h-10 rounded-full bg-[#111111] shadow-md border border-gray-100" title="Negro"></div>
-            <div class="w-10 h-10 rounded-full bg-[#1A2B4C] shadow-md border border-gray-100" title="Azul Marino"></div>
-            <div class="w-10 h-10 rounded-full bg-[#36454F] shadow-md border border-gray-100" title="Gris Oxford"></div>
+            <div class="w-10 h-10 rounded-full bg-[#111111] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Negro"></div>
+            <div class="w-10 h-10 rounded-full bg-[#D3D3D3] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Gris Claro"></div>
+            <div class="w-10 h-10 rounded-full bg-[#E6C280] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Beige / Arena"></div>
+            <div class="w-10 h-10 rounded-full bg-[#36454F] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Gris Oxford"></div>
           </div>
         </div>
       </div>
@@ -203,10 +208,28 @@
       <p class="font-sans font-light text-gray-600 text-sm mb-10 leading-relaxed max-w-xl mx-auto">
         El mejor regalo que pueden darnos es su presencia en este día tan especial. Pero si desean tener un detalle con nosotros, ponemos a su disposición nuestra cuenta:
       </p>
-      <div class="bg-[#F5F2EA] p-8 rounded-xl w-full max-w-sm shadow-sm border border-gray-100/50">
-        <p class="font-sans font-medium text-gray-800 mb-2">Banco General</p>
-        <p class="font-sans text-gray-600 mb-2">Cuenta de Ahorros: 04-12-3456-7</p>
-        <p class="font-sans text-gray-600">A nombre de: Jorge y Eva</p>
+      
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ NÚMERO DE MESA ════════════════════════════ -->
+  <section *ngIf="mesa" class="py-16 bg-[#FDFBF7] text-center border-t border-gray-100">
+    <div class="max-w-xl mx-auto px-4 flex flex-col items-center">
+      <div class="w-16 h-16 rounded-full bg-[#E8EAE3] flex items-center justify-center mb-6">
+        <svg class="w-8 h-8 text-[#8F9779]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+          <path d="M13 5v2"></path>
+          <path d="M13 11v2"></path>
+          <path d="M13 17v2"></path>
+        </svg>
+      </div>
+      <h2 class="font-serif text-3xl md:text-4xl mb-4 text-[#333]">Tu Mesa Asignada</h2>
+      <p class="font-sans font-light text-gray-600 text-sm mb-8 leading-relaxed max-w-sm mx-auto">
+        Hemos reservado un lugar muy especial para ti.
+      </p>
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-xs mx-auto">
+        <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Mesa Número</p>
+        <p class="font-serif font-semibold  text-6xl text-[#8F9779]">{{ mesa }}</p>
       </div>
     </div>
   </section>

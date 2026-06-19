@@ -3,13 +3,13 @@ import {
   OnDestroy, OnInit, signal, inject
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Invitado, InvitadoService } from '../services/invitado.service';
 
 @Component({
   selector: 'app-invitacion-page',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './invitacion-page.html',
   styleUrls: ['./invitacion-page.css']
@@ -37,15 +37,15 @@ export class InvitacionPage implements OnInit, OnDestroy {
   private carouselInterval: any;
 
   damasImages = [
-    'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=800&auto=format&fit=crop'
+    'assets/images/dama_pink_1781750520690.png',
+    'assets/images/dama_mint_1781750528011.png',
+    'assets/images/dama_lavender_1781750538418.png'
   ];
 
   caballerosImages = [
-    'https://images.unsplash.com/photo-1593030761757-71fae46af504?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1594938298596-70f581d68364?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=800&auto=format&fit=crop'
+    'assets/images/caballero_lightgrey_1781750562523.png',
+    'assets/images/caballero_beige_1781750569983.png',
+    'assets/images/caballero_darkgrey_1781750579204.png'
   ];
 
   private whatsappNumber = '50762734608';
@@ -113,6 +113,7 @@ export class InvitacionPage implements OnInit, OnDestroy {
 public nombre:any
 public mensaje:any
 public mensaje2:any
+public mesa:any
 
 obtenerdatos() {
   const data = {
@@ -125,6 +126,7 @@ obtenerdatos() {
       console.log(resp);
 
       this.nombre = resp.data.nombre;
+      this.mesa = resp.data.mesa || '5'; // Si no viene mesa del backend, mostrará la mesa 5 de prueba
 
       if (!resp.data.mensaje || resp.data.mensaje.trim() === '') {
         this.mensaje = 'Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más queremos los hace inolvidables. Tenemos el inmenso honor de invitarte a celebrar el comienzo de nuestra nueva vida juntos.';
