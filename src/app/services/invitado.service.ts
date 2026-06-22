@@ -12,7 +12,7 @@ export interface Invitado {
   providedIn: 'root'
 })
 export class InvitadoService {
-  private url ='https://backendjs-8z5p.onrender.com/api/examples/'
+  private url ='https://backend-admin-production-652b.up.railway.app/api/examples/';
 
 constructor(private http:HttpClient){
 }

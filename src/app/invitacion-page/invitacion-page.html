@@ -12,7 +12,8 @@
       <div class="heart-float text-5xl left-[30%]"  style="animation-delay:2s">❤️</div>
       <div class="heart-float text-2xl left-[60%]"  style="animation-delay:4s">❤️</div>
       <div class="heart-float text-4xl left-[80%]"  style="animation-delay:1s">❤️</div>
-      <div class="heart-float text-3xl left-[50%]"  style="animation-delay:3s">❤️</div>
+      <div class="heart-float text-4xl left-[80%]"  style="animation-delay:1s">❤️</div>
+
     </div>
 
     <div class="relative z-10 flex flex-col items-center w-full px-4" [class.fade-in-up]="isLoaded()">
@@ -196,7 +197,7 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════ MESA DE REGALOS ═══════════════════════════ -->
+  <!-- ═══════════════════════════ ESPACIO DE REGALOS ═══════════════════════════ -->
   <section class="py-24 bg-white text-center">
     <div class="max-w-3xl mx-auto px-4 flex flex-col items-center">
       <svg class="w-10 h-10 text-[#8F9779] mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
@@ -204,7 +205,7 @@
         <line x1="12" x2="12" y1="22" y2="7"/>
         <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
       </svg>
-      <h2 class="font-serif text-4xl md:text-5xl mb-6 text-[#333]">Mesa de Regalos</h2>
+      <h2 class="font-serif text-4xl md:text-5xl mb-6 text-[#333]">Espacio de Regalos</h2>
       <p class="font-sans font-light text-gray-600 text-sm mb-10 leading-relaxed max-w-xl mx-auto">
         El mejor regalo que pueden darnos es su presencia en este día tan especial. Pero si desean tener un detalle con nosotros, ponemos a su disposición nuestra cuenta:
       </p>
@@ -223,13 +224,21 @@
           <path d="M13 17v2"></path>
         </svg>
       </div>
-      <h2 class="font-serif text-3xl md:text-4xl mb-4 text-[#333]">Tu Mesa Asignada</h2>
-      <p class="font-sans font-light text-gray-600 text-sm mb-8 leading-relaxed max-w-sm mx-auto">
-        Hemos reservado un lugar muy especial para ti.
+      <h2 class="font-serif text-3xl md:text-4xl mb-4 text-[#333]">Tu Asignación</h2>
+      <p class="font-sans font-light text-gray-600 text-sm mb-8 leading-relaxed max-w-md mx-auto">
+        Hemos reservado un lugar muy especial para ti. Te compartimos tu mesa y la cantidad de puestos asignados a tu nombre. 
+        <br><br>
+        
       </p>
-      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-xs mx-auto">
-        <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Mesa Número</p>
-        <p class="font-serif font-semibold  text-6xl text-[#8F9779]">{{ mesa }}</p>
+      <div class="flex flex-col md:flex-row gap-6 justify-center w-full max-w-lg mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-xs mx-auto md:w-1/2">
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Mesa Asignada</p>
+          <p class="font-normal font-semibold  text-6xl text-[#8F9779]">{{ mesa }}</p>
+        </div>
+        <div *ngIf="puestos" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-xs mx-auto md:w-1/2">
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Puestos Reservados</p>
+          <p class="font-normal font-semibold  text-6xl text-[#8F9779]">{{ puestos }}</p>
+        </div>
       </div>
     </div>
   </section>

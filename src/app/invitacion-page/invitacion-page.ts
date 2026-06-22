@@ -114,6 +114,7 @@ public nombre:any
 public mensaje:any
 public mensaje2:any
 public mesa:any
+public puestos:any
 
 obtenerdatos() {
   const data = {
@@ -127,6 +128,7 @@ obtenerdatos() {
 
       this.nombre = resp.data.nombre;
       this.mesa = resp.data.mesa || '5'; // Si no viene mesa del backend, mostrará la mesa 5 de prueba
+      this.puestos = resp.data.puestos || '2'; // Si no viene cantidad de puestos, mostrará 2 de prueba
 
       if (!resp.data.mensaje || resp.data.mensaje.trim() === '') {
         this.mensaje = 'Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más queremos los hace inolvidables. Tenemos el inmenso honor de invitarte a celebrar el comienzo de nuestra nueva vida juntos.';
