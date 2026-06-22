@@ -3,9 +3,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./src",
+    "outDir": "./out-tsc/app",
     "types": [],
-    "ignoreDeprecations": "6.0"
 
   },
   "include": [
