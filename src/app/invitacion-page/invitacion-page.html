@@ -146,46 +146,57 @@
   <section class="py-16 md:py-24 bg-[#F5F2EA]">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h2 class="font-serif text-4xl md:text-5xl mb-4 text-[#333]">Dress Code</h2>
-      <p class="font-sans font-semibold text-[#333] tracking-widest uppercase mb-4 text-sm">Formal / Etiqueta</p>
       <p class="font-sans font-light text-gray-600 text-sm mb-12 max-w-2xl mx-auto">
         Nos encantaría verlos lucir espectaculares en nuestro gran día.<br>
-        <span class="font-medium text-[#8F9779] block mt-2">* Por favor, reservar los tonos blancos y crema exclusivamente para la novia.</span>
+        <span class="font-medium text-[#8F9779] block mt-2">* Por favor, reservar los tonos blancos y crema exclusivamente para la novia. Y traje azul para el novio.</span>
       </p>
 
       <div class="grid md:grid-cols-2 gap-10 md:gap-16">
         <!-- Damas -->
         <div class="flex flex-col items-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
           <h4 class="font-serif text-3xl mb-2 text-[#333]">Damas</h4>
-          <p class="font-sans font-light text-gray-500 text-sm mb-6">Vestido largo de noche</p>
-          <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl mb-6 shadow-inner bg-gray-100">
+          <p class="font-sans font-light text-gray-500 text-sm mb-6">Vestido coctel largo</p>
+          <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl mb-6 shadow-inner bg-gray-100 group">
             <img *ngFor="let img of damasImages; let i = index"
                  [src]="img" alt="Referencia vestido damas"
                  class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out"
                  [class.opacity-100]="i === currentDamaImg()"
                  [class.opacity-0]="i !== currentDamaImg()"/>
+            <button (click)="prevDamaImg()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10">
+              <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button (click)="nextDamaImg()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10">
+              <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
           </div>
-          <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#8F9779] mb-4 font-medium">Colores sugeridos</p>
+          <p class="font-serif text-xs uppercase tracking-[0.2em] text-[#8F9779] mb-4 font-semibold">Colores sugeridos</p>
           <div class="flex gap-4 flex-wrap justify-center">
-            <div class="w-10 h-10 rounded-full bg-[#FFD1DC] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Rosa Pastel"></div>
-            <div class="w-10 h-10 rounded-full bg-[#AEC6CF] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Celeste Pastel"></div>
-            <div class="w-10 h-10 rounded-full bg-[#98FF98] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Verde Menta"></div>
-            <div class="w-10 h-10 rounded-full bg-[#E6E6FA] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Lavanda"></div>
-            <div class="w-10 h-10 rounded-full bg-[#FDFD96] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Amarillo Pastel"></div>
+            <div class="w-10 h-10 rounded-full bg-[#EFC6D8] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Rosa Empolvado"></div>
+            <div class="w-10 h-10 rounded-full bg-[#DCCCF5] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Lila Pastel"></div>
+            <div class="w-10 h-10 rounded-full bg-[#F8EDB8] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Amarillo Mantequilla"></div>
+            <div class="w-10 h-10 rounded-full bg-[#F7D1B5] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Durazno Pastel"></div>
+            <div class="w-10 h-10 rounded-full bg-[#D8E7D2] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Verde Salvia Claro"></div>
           </div>
         </div>
 
         <!-- Caballeros -->
         <div class="flex flex-col items-center bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
           <h4 class="font-serif text-3xl mb-2 text-[#333]">Caballeros</h4>
-          <p class="font-sans font-light text-gray-500 text-sm mb-6">Traje oscuro y corbata</p>
-          <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl mb-6 shadow-inner bg-gray-100">
+          <p class="font-sans font-light text-gray-500 text-sm mb-6">Trajes sugeridos y corbata</p>
+          <div class="relative w-full aspect-[4/5] overflow-hidden rounded-2xl mb-6 shadow-inner bg-gray-100 group">
             <img *ngFor="let img of caballerosImages; let i = index"
                  [src]="img" alt="Referencia traje caballeros"
                  class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out"
                  [class.opacity-100]="i === currentCaballeroImg()"
                  [class.opacity-0]="i !== currentCaballeroImg()"/>
+            <button (click)="prevCaballeroImg()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10">
+              <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button (click)="nextCaballeroImg()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10">
+              <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
           </div>
-          <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#8F9779] mb-4 font-medium">Colores sugeridos</p>
+          <p class="font-serif text-xs uppercase tracking-[0.2em] text-[#8F9779] mb-4 font-semibold">Colores sugeridos</p>
           <div class="flex gap-4 flex-wrap justify-center">
             <div class="w-10 h-10 rounded-full bg-[#111111] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Negro"></div>
             <div class="w-10 h-10 rounded-full bg-[#D3D3D3] shadow-md border border-gray-200 transform transition-transform hover:scale-110" title="Gris Claro"></div>
@@ -226,18 +237,14 @@
       </div>
       <h2 class="font-serif text-3xl md:text-4xl mb-4 text-[#333]">Tu Asignación</h2>
       <p class="font-sans font-light text-gray-600 text-sm mb-8 leading-relaxed max-w-md mx-auto">
-        Hemos reservado un lugar muy especial para ti. Te compartimos tu mesa y la cantidad de puestos asignados a tu nombre. 
+        Hemos reservado un lugar muy especial para ti. Te compartimos tu mesa asignada. 
         <br><br>
         
       </p>
-      <div class="flex flex-col md:flex-row gap-6 justify-center w-full max-w-lg mx-auto">
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-xs mx-auto md:w-1/2">
+      <div class="flex flex-col gap-6 justify-center w-full max-w-xs mx-auto">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full text-center">
           <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Mesa Asignada</p>
-          <p class="font-normal font-semibold  text-6xl text-[#8F9779]">{{ mesa }}</p>
-        </div>
-        <div *ngIf="puestos" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full max-w-xs mx-auto md:w-1/2">
-          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Puestos Reservados</p>
-          <p class="font-normal font-semibold  text-6xl text-[#8F9779]">{{ puestos }}</p>
+          <p class="font-semibold  text-6xl text-[#8F9779]">{{ mesa }}</p>
         </div>
       </div>
     </div>
@@ -249,10 +256,17 @@
     <p class="font-sans font-light text-gray-600 mb-10 max-w-lg mx-auto text-sm">
       Nos encantaría saber si podremos contar con tu presencia. Por favor, confírmanos antes del <strong>1 de Septiembre</strong>.
     </p>
-    <a [href]="rsvpLink" target="_blank" rel="noreferrer"
-       class="inline-flex items-center justify-center gap-3 bg-[#8F9779] text-white py-4 px-10 rounded-full font-sans tracking-widest uppercase text-sm hover:bg-[#7a8266] transition-all transform hover:scale-105 shadow-md">
-      Sí, ahí estaré
-    </a>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a [href]="rsvpLink" target="_blank" rel="noreferrer"
+         class="inline-flex items-center justify-center gap-3 bg-[#8F9779] text-white py-4 px-10 rounded-full font-sans tracking-widest uppercase text-sm font-bold shadow-lg shadow-[#8F9779]/40 hover:bg-[#7a8266] transition-all transform hover:scale-105 w-full sm:w-auto">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+        Sí, ahí estaré
+      </a>
+      <a [href]="rsvpDeclineLink" target="_blank" rel="noreferrer"
+         class="inline-flex items-center justify-center gap-3 bg-transparent border border-gray-300 text-gray-500 py-3 px-8 rounded-full font-sans tracking-widest uppercase text-xs hover:bg-gray-50 hover:text-gray-700 transition-all w-full sm:w-auto">
+        No podré asistir
+      </a>
+    </div>
   </section>
 
   <!-- ═══════════════════════════════ FOOTER ════════════════════════════════ -->
@@ -260,5 +274,25 @@
     <h1 class="font-script text-5xl text-[#3A3A3A] opacity-80">J &amp; E</h1>
     <p class="font-sans font-light text-xs text-gray-400 mt-4 tracking-[0.2em] uppercase">Nos vemos pronto</p>
   </footer>
+
+  <!-- Player Oculto de YouTube -->
+  <div class="fixed top-0 left-0 w-0 h-0 overflow-hidden pointer-events-none opacity-0 z-[-1]">
+    <iframe 
+      id="ytplayer"
+      width="0" height="0" 
+      src="https://www.youtube.com/embed/zWW75icDzCE?enablejsapi=1&autoplay=1&loop=1&playlist=zWW75icDzCE&controls=0"
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Botón Flotante para Música -->
+  <button (click)="toggleMusic()"
+          class="fixed bottom-6 right-6 z-50 p-4 bg-white/80 backdrop-blur-md rounded-full shadow-lg border border-[#8F9779]/20 hover:bg-[#8F9779] hover:text-white transition-all text-[#8F9779] focus:outline-none"
+          [title]="isMusicPlaying() ? 'Pausar música' : 'Reproducir música'">
+    <svg *ngIf="isMusicPlaying()" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <svg *ngIf="!isMusicPlaying()" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+  </button>
 
 </div>
