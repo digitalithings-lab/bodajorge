@@ -225,7 +225,7 @@
   </section>
 
   <!-- ═══════════════════════════ NÚMERO DE MESA ════════════════════════════ -->
-  <section *ngIf="mesa" class="py-16 bg-[#FDFBF7] text-center border-t border-gray-100">
+  <section *ngIf="mesa || puestos" class="py-16 bg-[#FDFBF7] text-center border-t border-gray-100">
     <div class="max-w-xl mx-auto px-4 flex flex-col items-center">
       <div class="w-16 h-16 rounded-full bg-[#E8EAE3] flex items-center justify-center mb-6">
         <svg class="w-8 h-8 text-[#8F9779]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -241,10 +241,14 @@
         <br><br>
         
       </p>
-      <div class="flex flex-col gap-6 justify-center w-full max-w-xs mx-auto">
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full text-center">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md mx-auto">
+        <div *ngIf="mesa" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full text-center flex-1">
           <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Mesa Asignada</p>
           <p class="font-semibold  text-6xl text-[#8F9779]">{{ mesa }}</p>
+        </div>
+        <div *ngIf="puestos" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 w-full text-center flex-1">
+          <p class="font-sans text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-2">Puestos</p>
+          <p class="font-semibold  text-6xl text-[#8F9779]">{{ puestos }}</p>
         </div>
       </div>
     </div>

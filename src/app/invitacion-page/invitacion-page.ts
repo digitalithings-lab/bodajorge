@@ -141,7 +141,7 @@ public nombre:any
 public mensaje:any
 public mensaje2:any
 public mesa:any
-
+public puestos:any
 obtenerdatos() {
   const data = {
     id: this.id
@@ -153,13 +153,16 @@ obtenerdatos() {
       console.log(resp);
 
       this.nombre = resp.data.nombre;
-      this.mesa = resp.data.mesa; // Si no viene mesa del backend, mostrará la mesa 5 de prueba
+      this.mesa = resp.data.mesa; 
+      this.puestos = resp.data.npuestos; // Asegurarse de usar npuestos
 
       if (!resp.data.mensaje || resp.data.mensaje.trim() === '') {
         this.mensaje = 'Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más queremos los hace inolvidables. Tenemos el inmenso honor de invitarte a celebrar el comienzo de nuestra nueva vida juntos.';
       } else {
         this.mensaje = resp.data.mensaje;
       }
+
+      this.cdr.markForCheck(); // CRÍTICO: Forzar detección de cambios
     }
   });
 }
