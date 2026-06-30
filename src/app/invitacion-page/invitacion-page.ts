@@ -1,6 +1,6 @@
 import {
   ChangeDetectionStrategy, ChangeDetectorRef, Component,
-  OnDestroy, OnInit, signal, inject, ViewChild
+  OnDestroy, OnInit, signal, inject, ViewChild, HostListener
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgFor, NgIf, NgClass } from '@angular/common';
@@ -18,6 +18,17 @@ export class InvitacionPage implements OnInit, OnDestroy {
   player: any;
   isMusicPlaying = signal<boolean>(false);
   isPlayerReady = signal<boolean>(false);
+  isScrolling = signal<boolean>(false);
+  private scrollTimeout: any;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolling.set(true);
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => {
+      this.isScrolling.set(false);
+    }, 500);
+  }
 
  public id:any
   // ─── Guest name desde la ruta /:invitado ───────────────────────────────────
